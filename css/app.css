@@ -1,0 +1,262 @@
+/*
+ *  Memory Game
+ *  Udacity Front-End Developer assignment
+ *
+ *  Developed by Noreen Wu
+ *  March 2019
+ *
+ *  This file, app.css, contains all of the styling that is needed for the game.
+ *  In addition to laying out the gameboard, this file defines the colors of
+ *  the cards during play, and plays a role in controlling whether the symbol for a card
+ *  is visible or not. Specifically, the symbols for cards in a deck
+ *  are shown when cards contain the classes "open" and "show," and cards can
+ *  be easily identified as already matched when they have a background color green,
+ *  as defined by the class "match."
+*/
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+.deck .card.red {
+    background: red;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.modalp {
+    font-size: 1.3em;
+    text-align: center;
+    width: 100%;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+    color: black;
+}
+
+.lit {
+    color: goldenrod;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+.restart:hover {
+    color: #02b6b3;
+}
+
+.restart:active {
+    color: #000;
+}
+
+.timer {
+  text-align: center;
+  font-family: Helvetica, Arial;
+  font-size: 1.3em;
+}
+
+#minutes, #seconds {
+  display: inline;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 8px solid #02b6b3;
+  width: 50%;
+  font-family: Helvetica, Arial;
+}
+
+.message {
+  text-align: center;
+  font-size: 2em;
+  padding: 24px;
+}
+
+.star-rating {
+  text-align: center;
+  /* display: inline; */
+}
+
+.credit {
+  font-size: .3em;
+}
+
+a {
+  color: grey;
+}
+
+.timer {
+  font-size: 2em;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+#newgame-msg {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.play-again {
+  padding: 20px;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #abd6d8;
+}
+
+button:active {
+  background-color: #1e6285;
+}
+
+.button {
+  padding: 15px 32px;
+  margin: 20px 0;
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.button-response {
+  padding: 10px;
+}
+
+.yes-button {
+  background-color: #02b6b3;
+}
+
+.no-button {
+  background-color: grey;
+}

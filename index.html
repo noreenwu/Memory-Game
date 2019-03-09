@@ -1,0 +1,96 @@
+<!--
+/*
+ *  Memory Game
+ *  Udacity Front-End Developer assignment
+ *
+ *  Developed by Noreen Wu
+ *  March 2019
+
+ This module, index.html, contains the base html upon which the Memory Game is built.
+ Loading this file by itself, without the Javascript file app.js, would yield a scorecard
+ and timer, and card deck with no actual cards. That is because the card deck is actually
+ built within app.js, every time a new game begins. This allows the program to shuffle
+ the symbols each time, so the user gets a new game whenever s/he wants to play again. 
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Matching Game</title>
+    <meta name="description" content="">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Matching Game</h1>
+        </header>
+
+        <section class="score-panel">
+          How you're doing:
+        	<ul class="stars">
+        		<li><i class="fa fa-star lit"></i></li>
+        		<li><i class="fa fa-star lit"></i></li>
+        		<li><i class="fa fa-star lit"></i></li>
+        	</ul>
+
+        	<span class="moves">0</span> <span class="move-plurality">Moves</span>
+
+            <div class="restart">
+        		<i class="fa fa-repeat" onclick="newGame();"></i>
+        	</div>
+        </section>
+
+        <ul id="deck" class="deck">
+
+        </ul>
+
+    </div>
+    <div class="timer">
+      <span id="elapsedTime">00:00</span>
+    </div>
+    <div id="newgame-msg">
+    </div>
+
+    <!-- Congratulations Modal -->
+    <div id="congrats-modal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="message">
+          <p>Congratulations! You win!</p>
+          <img src="img/aqua-fireworks.jpg">
+          <div class="credit">
+            <a href="https://www.vecteezy.com">Illustration credit: vecteezy.com</a>
+          </div>
+        </div>
+
+        <div class="timer">
+          <span id="modal-elapsed-time">00:00</span>
+        </div>
+
+        <div class="score-panel modalp">
+          Star Rating: <ul class="stars">
+            <li><i class="fa fa-star lit"></i></li>
+            <li><i class="fa fa-star lit"></i></li>
+            <li><i class="fa fa-star lit"></i></li>
+          </ul>
+        </div>
+        <div class="play-again">
+          Do you want to play again?
+          <div class="button-responses">
+            <button class="button yes-button" onclick="newGame();">Yes</button>
+            <button class="button no-button" onclick="closeModal();">No</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

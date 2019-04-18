@@ -9,8 +9,8 @@
 
 # Overview
 
-This memory game is electronic analog to what many of us played as kids using cards.
-Typically played with a single user, the object of the game is to find a pair
+This memory game is the electronic analog to what many of us played as kids using cards.
+Typically played as a single user game, the objective is to find the  matching pair
 for each overturned card. But one can only turn over two cards at a time.
 
 In this version of the game, you have unlimited time to find all pairs. Any two
